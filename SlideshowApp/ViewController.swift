@@ -26,8 +26,6 @@ class ViewController: UIViewController {
         let image = UIImage(named: "\(imageName)" + number.description + ".jpg")!
         imageView.image = image
         
-        
-        
         //ImageViewのタップイベントを設定
         let tapGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.imageTap(_:)))
         self.imageView.addGestureRecognizer(tapGesture)
@@ -58,6 +56,7 @@ class ViewController: UIViewController {
     func timerStop(){
         timer?.invalidate()
     }
+    
     //ボタンタップ時の動作
     func buttonTap(sender:UIButton){
         switch sender.tag {
@@ -65,9 +64,13 @@ class ViewController: UIViewController {
             if sender.titleLabel?.text == "再生" {
                 timerInit()
                 sender.setTitle("停止", forState: UIControlState.Normal)
+                nextImage.enabled = false
+                backImage.enabled = false
             }else if sender.titleLabel?.text == "停止" {
                 timerStop()
                 sender.setTitle("再生", forState: UIControlState.Normal)
+                nextImage.enabled = true
+                backImage.enabled = true
             }
         case 2:
             imageChange(1)
@@ -77,6 +80,17 @@ class ViewController: UIViewController {
             break
         }
     }
+    
+    //画像タップ時の動作
+    func imageTap(sender:UITapGestureRecognizer){
+        //再生時タイマーを停止するために再生/停止ボタンのタップイベントを呼び出す
+        if playstopButton.titleLabel?.text == "停止" {
+            buttonTap(playstopButton)
+        }
+        // ResultViewControllerへ遷移するためのSegueを呼び出す
+        performSegueWithIdentifier("toResultViewController",sender: nil)
+    }
+    
     //画像切り替え（timerからの呼び出し）
     func imageChange(){
         imageChange(1)
@@ -92,18 +106,14 @@ class ViewController: UIViewController {
         let image = UIImage(named: "\(imageName)" + number.description + ".jpg")!
         imageView.image = image
     }
-    //画像タップ時の動作
-    func imageTap(sender:UITapGestureRecognizer){
-        // ResultViewControllerへ遷移するためのSegueを呼び出す
-        performSegueWithIdentifier("toResultViewController",sender: nil)
-        
-    }
+    
     //segueの設定
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let resultViewContlloer:ResultViewController = segue.destinationViewController as!ResultViewController
         resultViewContlloer.imangeName = "\(imageName)" + number.description + ".jpg"
         
     }
+    
     // 他画面からの戻り
     @IBAction func unwind(segue:UIStoryboardSegue){
     }

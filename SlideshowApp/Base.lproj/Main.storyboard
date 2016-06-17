@@ -27,7 +27,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <state key="normal" title="再生"/>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feY-de-H2V">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feY-de-H2V">
                                 <rect key="frame" x="20" y="352" width="38" height="38"/>
                                 <accessibility key="accessibilityConfiguration" hint="戻る"/>
                                 <constraints>
@@ -55,19 +55,17 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="PpF-bP-KgS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="87" id="1AU-Bo-ryJ"/>
-                            <constraint firstItem="fHj-7D-HaG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="87" id="9jy-fB-B6P"/>
-                            <constraint firstItem="fHj-7D-HaG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="121" id="H5r-fl-ZiE"/>
-                            <constraint firstItem="feY-de-H2V" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-121" id="H7b-cS-6v4"/>
-                            <constraint firstItem="feY-de-H2V" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="87" id="Vat-Ju-LGw"/>
+                            <constraint firstItem="fHj-7D-HaG" firstAttribute="top" secondItem="stC-0q-HWp" secondAttribute="bottom" constant="50" id="2aU-ng-LjV"/>
+                            <constraint firstItem="fHj-7D-HaG" firstAttribute="leading" secondItem="PpF-bP-KgS" secondAttribute="trailing" constant="60" id="Gh1-Hz-z1G"/>
+                            <constraint firstItem="feY-de-H2V" firstAttribute="top" secondItem="stC-0q-HWp" secondAttribute="bottom" constant="50" id="R1y-WW-2n0"/>
+                            <constraint firstItem="PpF-bP-KgS" firstAttribute="top" secondItem="stC-0q-HWp" secondAttribute="bottom" constant="50" id="XfL-ah-9Ry"/>
                             <constraint firstItem="stC-0q-HWp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-108" id="Xpb-u1-tHJ"/>
-                            <constraint firstItem="fHj-7D-HaG" firstAttribute="top" secondItem="stC-0q-HWp" secondAttribute="bottom" constant="50" id="cWY-fs-9Pu"/>
-                            <constraint firstItem="PpF-bP-KgS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fWL-WF-zix"/>
+                            <constraint firstItem="PpF-bP-KgS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fYs-MX-ptA"/>
                             <constraint firstItem="stC-0q-HWp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gau-32-5N8"/>
-                            <constraint firstItem="fHj-7D-HaG" firstAttribute="leading" secondItem="PpF-bP-KgS" secondAttribute="trailing" constant="61" id="is8-uX-rrH"/>
-                            <constraint firstItem="PpF-bP-KgS" firstAttribute="top" secondItem="fHj-7D-HaG" secondAttribute="top" id="mkh-jX-SI2"/>
+                            <constraint firstItem="PpF-bP-KgS" firstAttribute="leading" secondItem="feY-de-H2V" secondAttribute="trailing" constant="60" id="meG-ym-RVH"/>
+                            <constraint firstItem="PpF-bP-KgS" firstAttribute="leading" secondItem="feY-de-H2V" secondAttribute="trailing" constant="60" id="qgS-pV-7fu"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -104,13 +102,14 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEd-EN-eN0">
                                 <rect key="frame" x="145" y="504" width="30" height="34"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="戻る"/>
                                 <connections>
                                     <segue destination="pas-bc-2fN" kind="unwind" unwindAction="unwind:" id="She-Tb-iJU"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="rEd-EN-eN0" firstAttribute="top" secondItem="CZs-UF-gqd" secondAttribute="bottom" constant="30" id="5zO-RV-OtR"/>
                             <constraint firstItem="CZs-UF-gqd" firstAttribute="centerX" secondItem="Guk-zW-afn" secondAttribute="centerX" id="8We-4T-94g"/>
